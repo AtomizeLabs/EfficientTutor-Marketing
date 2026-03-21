@@ -3,9 +3,21 @@ export function renderNav() {
     if (!navRoot) return;
 
     const currentPath = window.location.pathname;
+    
     const isLinkActive = (path) => {
-        if (path === '/' && (currentPath === '/' || currentPath === '/index.html')) return true;
-        return currentPath.includes(path);
+        // Normalize current path (remove trailing slash and .html)
+        const normalizedCurrent = currentPath.replace(/\/$/, '').replace('.html', '') || '/';
+        
+        // Normalize target path (ensure leading slash, remove trailing slash and .html)
+        let normalizedTarget = path.startsWith('/') ? path : '/' + path;
+        normalizedTarget = normalizedTarget.replace(/\/$/, '').replace('.html', '') || '/';
+
+        // Home page special case (match / or /index)
+        if (normalizedTarget === '/' || normalizedTarget === '/index') {
+            return normalizedCurrent === '/' || normalizedCurrent === '/index';
+        }
+
+        return normalizedCurrent === normalizedTarget;
     };
 
     navRoot.innerHTML = `
