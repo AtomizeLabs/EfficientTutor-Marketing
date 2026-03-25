@@ -8,7 +8,7 @@ This project is a high-performance **Static Site** built with modern web standar
 
 ### Key Features
 *   **Zero-Backend Architecture:** Pure static files for ultra-fast loading and easy hosting.
-*   **Modern Dark UI:** A refined Slate/Zinc dark theme powered by Tailwind CSS.
+*   **Modern Dark UI:** A refined Slate/Zinc dark theme powered by Tailwind CSS v4.
 *   **Component Injection:** Shared Navbar and Footer are injected via Vanilla JavaScript to eliminate HTML duplication across pages.
 *   **Responsive Design:** Mobile-first layout that adapts seamlessly to all screen sizes.
 *   **SEO Optimized:** Unique meta tags, titles, and semantic HTML for every page.
@@ -17,9 +17,9 @@ This project is a high-performance **Static Site** built with modern web standar
 ## 🛠️ Tech Stack
 
 *   **Core:** HTML5, Vanilla JavaScript (ES Modules)
-*   **Styling:** [Tailwind CSS v4.0](https://tailwindcss.com/) (via native Vite plugin)
-*   **Build Tool:** [Vite 6+](https://vitejs.dev/) (configured as an MPA)
-*   **Deployment:** Render.com (Static Site)
+*   **Styling:** [Tailwind CSS v4.1+](https://tailwindcss.com/) (via native Vite plugin)
+*   **Build Tool:** [Vite 7+](https://vitejs.dev/) (configured as an MPA)
+*   **Deployment:** Cloudflare Pages (Static Site)
 
 ## 💻 Local Development
 
@@ -61,35 +61,35 @@ To test the production build locally before deploying:
 npm run preview
 ```
 
-## 🌐 Deployment (Render.com)
+## 🌐 Deployment (Cloudflare Pages)
 
-This project is configured for seamless deployment on [Render](https://render.com/).
+This project is configured for seamless deployment on [Cloudflare Pages](https://pages.cloudflare.com/).
 
-1.  Create a new **Static Site** on Render.
-2.  Connect your GitHub/GitLab repository.
-3.  Use the following settings:
-    *   **Root Directory:** `.` (leave blank)
-    *   **Build Command:** `npm install && npm run build`
-    *   **Publish Directory:** `dist`
+### Deployment Settings
+*   **Framework Preset:** `Vite`
+*   **Build Command:** `npm run build`
+*   **Build Output Directory:** `dist`
+*   **Node.js Version:** `18+`
 
 ## 📁 Project Structure
 
 ```text
 /
 ├── index.html              # Landing Page
+├── contact.html            # Contact & Support Page
 ├── privacy.html            # Privacy Policy
 ├── tutorials.html          # Tutorials Hub
-├── public/                 # Static assets (logo.svg, robots.txt)
+├── public/                 # Static assets (logo.png, robots.txt, sitemap.xml)
 ├── src/
 │   ├── js/
 │   │   ├── main.js         # Entry point (imports CSS + injects components)
 │   │   └── components.js   # HTML strings for Navbar & Footer
 │   └── css/
-│       └── style.css       # Tailwind CSS entry point
+│       └── style.css       # Tailwind CSS entry point (@import "tailwindcss")
 ├── vite.config.js          # Vite MPA configuration
 └── package.json            # Dependencies and scripts
 ```
 
 ## 📄 License
 
-© 2026 EfficientTutor. All rights reserved.
+© 2026 AtomizeLabs. All rights reserved.
