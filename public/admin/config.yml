@@ -10,7 +10,7 @@ public_folder: "/assets"
 collections:
   - name: "content"
     label: "Site Content"
-    delete: false # Prevent accidental deletion of the whole file
+    delete: false
     files:
       - name: "tutorials"
         label: "Tutorials Hub"
@@ -25,7 +25,7 @@ collections:
               - {label: "Topic ID (Slug)", name: "id", widget: "string", hint: "e.g. zoom-integration"}
               - {label: "Topic Title", name: "title", widget: "string", hint: "e.g. Zoom App Integration"}
               - {label: "Description", name: "description", widget: "text"}
-              - {label: "Icon (SVG)", name: "icon", widget: "code", default_language: "html", hint: "Paste Heroicon SVG string here"}
+              - {label: "Icon (SVG)", name: "icon", widget: "text", hint: "Paste Heroicon SVG string here"}
               - label: "Tutorials"
                 name: "tutorials"
                 widget: "list"
@@ -39,6 +39,13 @@ collections:
                     fields:
                       - {label: "Desktop YouTube ID", name: "desktop", widget: "string"}
                       - {label: "Mobile YouTube ID", name: "mobile", widget: "string"}
-                  - {label: "Step-by-Step Guide", name: "steps", widget: "list", summary: "{{fields.step}}"}
+                  - label: "Step-by-Step Guide"
+                    name: "steps"
+                    widget: "list"
+                    field: {label: "Step", name: "step", widget: "string"}
                   - {label: "Troubleshooting Guide (Optional)", name: "troubleshoot", widget: "text", required: false}
-                  - {label: "Related Tutorial IDs (Optional)", name: "relatedIds", widget: "list", required: false, hint: "Enter IDs of other tutorials to link to"}
+                  - label: "Related Tutorial IDs (Optional)"
+                    name: "relatedIds"
+                    widget: "list"
+                    required: false
+                    field: {label: "Related ID", name: "id", widget: "string"}
