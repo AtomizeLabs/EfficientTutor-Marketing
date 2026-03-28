@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://info.efficienttutor.tech/sitemap.xml
+Sitemap: https://info.efficienttutor.com/sitemap.xml

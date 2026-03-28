@@ -7,7 +7,7 @@ We are building the **Marketing, Tutorial & Privacy Website** for "EfficientTuto
 * **Core:** HTML5, Vanilla JavaScript (ES Modules).
 * **Styling:** **Tailwind CSS v4.0** (Native Vite Plugin).
 * **Build Tool:** **Vite 6+** (Multi-Page App configuration).
-* **Deployment:** Render.com Static Site.
+* **Deployment:** Cloud flare Static Site.
 
 ## 2. Architecture & Design Philosophy
 * **Zero Backend:** Pure static files. No databases.

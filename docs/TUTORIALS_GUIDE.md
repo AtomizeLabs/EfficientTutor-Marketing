@@ -3,7 +3,7 @@
 The EfficientTutor Tutorials Hub is powered by a **Headless CMS**. This allows the marketing team to manage tutorials through a visual interface without touching code.
 
 ## 🚀 How to Access the Admin Panel
-1. Go to `https://info.efficienttutor.tech/admin/`
+1. Go to `https://info.efficienttutor.com/admin/`
 2. Click **"Login with GitHub"**.
 3. You will see a dashboard with a **"Tutorial Topics"** collection.
 
