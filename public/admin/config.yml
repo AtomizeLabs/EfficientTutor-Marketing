@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Atomize-Labs/EfficientTutor-Marketing
+  repo: AtomizeLabs/EfficientTutor-Marketing
   branch: main
   base_url: https://efficienttutor-oauth-gateway.ambadran717.workers.dev
 
