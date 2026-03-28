@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: <your-username>/EfficientTutor-Marketing
+  repo: Atomize-Labs/EfficientTutor-Marketing
   branch: main
-  base_url: https://your-oauth-worker.workers.dev # We will set this up next
+  base_url: https://efficienttutor-oauth-gateway.ambadran717.workers.dev
 
 media_folder: "public/assets"
 public_folder: "/assets"
