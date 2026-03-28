@@ -1,0 +1,40 @@
+backend:
+  name: github
+  repo: AtomizeLabs/EfficientTutor-Marketing  # You must update this to your actual repo path
+  branch: main
+
+media_folder: "public/assets"
+public_folder: "/assets"
+
+collections:
+  - name: "tutorials"
+    label: "Tutorial Topics"
+    file: "public/data/tutorials.json"
+    format: "json"
+    description: "Manage the tutorial racks and individual guides"
+    fields:
+      - label: "Tutorial Topics"
+        name: "tutorialTopics"
+        widget: "list"
+        allow_add: true
+        fields:
+          - {label: "Topic ID (Slug)", name: "id", widget: "string", hint: "e.g. zoom-integration"}
+          - {label: "Topic Title", name: "title", widget: "string", hint: "e.g. Zoom App Integration"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Icon (SVG)", name: "icon", widget: "code", default_language: "html", hint: "Paste Heroicon SVG string here"}
+          - label: "Tutorials"
+            name: "tutorials"
+            widget: "list"
+            fields:
+              - {label: "Tutorial ID", name: "id", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Videos"
+                name: "videos"
+                widget: "object"
+                fields:
+                  - {label: "Desktop YouTube ID", name: "desktop", widget: "string"}
+                  - {label: "Mobile YouTube ID", name: "mobile", widget: "string"}
+              - {label: "Step-by-Step Guide", name: "steps", widget: "list", summary: "{{fields.step}}"}
+              - {label: "Troubleshooting Guide (Optional)", name: "troubleshoot", widget: "text", required: false}
+              - {label: "Related Tutorial IDs (Optional)", name: "relatedIds", widget: "list", required: false, hint: "Enter IDs of other tutorials to link to"}

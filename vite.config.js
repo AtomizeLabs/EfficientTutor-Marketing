@@ -1,6 +1,22 @@
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 import { resolve } from 'path'
+import fs from 'fs'
+
+// Auto-discover HTML files in the root directory
+const getHtmlEntries = () => {
+  const entries = {}
+  const files = fs.readdirSync(__dirname)
+  
+  files.forEach(file => {
+    if (file.endsWith('.html')) {
+      const name = file.replace('.html', '')
+      entries[name === 'index' ? 'main' : name] = resolve(__dirname, file)
+    }
+  })
+  
+  return entries
+}
 
 export default defineConfig({
   plugins: [
@@ -8,13 +24,7 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        privacy: resolve(__dirname, 'privacy.html'),
-        tutorials: resolve(__dirname, 'tutorials.html'),
-        contact: resolve(__dirname, 'contact.html'),
-        terms: resolve(__dirname, 'terms.html'),
-      },
+      input: getHtmlEntries(),
     },
   },
 })

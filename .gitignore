@@ -46,3 +46,5 @@ pnpm-debug.log*
 # OS System Files
 .DS_Store
 Thumbs.db
+
+tmp

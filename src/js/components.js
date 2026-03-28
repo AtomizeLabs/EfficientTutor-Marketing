@@ -1,3 +1,309 @@
+export async function renderTutorialsHub() {
+    const hubRoot = document.getElementById('tutorials-hub-root');
+    if (!hubRoot) return;
+
+    let tutorialTopics = [];
+
+    const getParams = () => new URLSearchParams(window.location.search);
+    const getHash = () => window.location.hash.replace('#', '');
+
+    const updateURL = (id, hash = '') => {
+        const newURL = id 
+            ? `${window.location.pathname}?id=${id}${hash ? '#' + hash : ''}`
+            : window.location.pathname;
+        window.history.pushState({ id, hash }, '', newURL);
+    };
+
+    const fetchTutorials = async () => {
+        try {
+            hubRoot.innerHTML = `
+                <div class="flex items-center justify-center py-20">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
+                </div>
+            `;
+            const response = await fetch('/data/tutorials.json');
+            const data = await response.json();
+            tutorialTopics = data.tutorialTopics;
+        } catch (error) {
+            console.error('Failed to load tutorials:', error);
+            hubRoot.innerHTML = `
+                <div class="text-center py-20">
+                    <p class="text-red-400">Failed to load tutorials. Please try again later.</p>
+                </div>
+            `;
+            return false;
+        }
+        return true;
+    };
+
+    const renderList = (isInitial = false) => {
+        if (!isInitial) updateURL(null);
+        
+        hubRoot.innerHTML = `
+            <div class="text-center mb-16 animate-fade-in">
+                <h1 class="text-4xl font-bold text-white mb-4">Tutorials Hub</h1>
+                <p class="text-slate-400 max-w-2xl mx-auto">Master EfficientTutor with our step-by-step guides designed for both students and educators.</p>
+            </div>
+            
+            <div class="space-y-20">
+                ${tutorialTopics.map(topic => `
+                    <section class="animate-fade-in">
+                        <div class="flex items-center mb-8 pb-4 border-b border-slate-800">
+                            <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mr-4">
+                                ${topic.icon}
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-white">${topic.title}</h2>
+                                <p class="text-slate-400 text-sm mt-1">${topic.description}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${topic.tutorials.map(tutorial => `
+                                <article class="bg-slate-800/40 border border-slate-700/50 rounded-xl overflow-hidden hover:border-emerald-500/50 hover:bg-slate-800/60 transition-all group cursor-pointer flex flex-col" data-id="${tutorial.id}">
+                                    <div class="aspect-video bg-slate-900 flex items-center justify-center relative overflow-hidden">
+                                        <img src="https://img.youtube.com/vi/${tutorial.videos.desktop}/mqdefault.jpg" alt="Video thumbnail for ${tutorial.title}" class="w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity group-hover:scale-105 transition-transform duration-500">
+                                        <div class="absolute inset-0 flex items-center justify-center">
+                                            <div class="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 group-hover:bg-emerald-500 group-hover:border-emerald-400 transition-all duration-300">
+                                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M8 5v14l11-7z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-5 flex-grow">
+                                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">${tutorial.title}</h3>
+                                        <p class="text-slate-400 text-sm line-clamp-2">${tutorial.description}</p>
+                                    </div>
+                                    <div class="px-5 pb-5 mt-auto">
+                                        <span class="text-xs font-semibold text-emerald-400 flex items-center">
+                                            Learn More 
+                                            <svg class="ml-1 w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </article>
+                            `).join('')}
+                        </div>
+                    </section>
+                `).join('')}
+            </div>
+        `;
+
+        hubRoot.querySelectorAll('[data-id]').forEach(card => {
+            card.addEventListener('click', () => {
+                const tutorial = findTutorial(card.dataset.id);
+                if (tutorial) {
+                    renderDetail(tutorial);
+                    updateURL(tutorial.id);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+    };
+
+    const findTutorial = (id) => {
+        for (const topic of tutorialTopics) {
+            const tutorial = topic.tutorials.find(t => t.id === id);
+            if (tutorial) {
+                return { ...tutorial, category: topic.title };
+            }
+        }
+        return null;
+    };
+
+    const renderDetail = (tutorial, targetSection = null) => {
+        // Auto-detect platform on load
+        let currentPlatform = window.innerWidth < 768 ? 'mobile' : 'desktop';
+
+        hubRoot.innerHTML = `
+            <div class="animate-fade-in max-w-4xl mx-auto">
+                <button id="back-to-tutorials" class="flex items-center text-slate-400 hover:text-emerald-400 transition-colors mb-8 group">
+                    <svg class="mr-2 w-5 h-5 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Back to all tutorials
+                </button>
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                    <!-- Video Section -->
+                    <div id="video" class="lg:col-span-2 scroll-mt-24">
+                        <div class="sticky top-24">
+                            <!-- Platform Switcher -->
+                            <div class="flex p-1 bg-slate-950 border border-slate-800 rounded-xl mb-4">
+                                <button data-platform="desktop" class="flex-1 flex items-center justify-center py-2 rounded-lg text-xs font-bold transition-all ${currentPlatform === 'desktop' ? 'bg-slate-800 text-white' : 'text-slate-500 hover:text-slate-300'}">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    Desktop
+                                </button>
+                                <button data-platform="mobile" class="flex-1 flex items-center justify-center py-2 rounded-lg text-xs font-bold transition-all ${currentPlatform === 'mobile' ? 'bg-slate-800 text-white' : 'text-slate-500 hover:text-slate-300'}">
+                                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                    Mobile
+                                </button>
+                            </div>
+
+                            <div class="aspect-[9/16] bg-slate-900 rounded-2xl overflow-hidden border border-slate-700 shadow-2xl relative">
+                                <iframe 
+                                    id="tutorial-iframe"
+                                    class="w-full h-full"
+                                    src="https://www.youtube.com/embed/${tutorial.videos[currentPlatform]}?rel=0&modestbranding=1" 
+                                    title="${tutorial.title}" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-4 text-center italic">Video Tutorial (Shorts)</p>
+                        </div>
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="lg:col-span-3">
+                        <div class="mb-2 text-emerald-400 font-semibold tracking-wide uppercase text-sm">${tutorial.category}</div>
+                        <h1 class="text-3xl md:text-4xl font-bold text-white mb-6">${tutorial.title}</h1>
+                        <p class="text-slate-400 text-lg mb-10 leading-relaxed">${tutorial.description}</p>
+
+                        <div class="space-y-16">
+                            <section id="guide" class="scroll-mt-24">
+                                <h3 class="text-xl font-bold text-white mb-6 flex items-center">
+                                    <span class="w-8 h-8 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center mr-3 text-sm">1</span>
+                                    Step-by-Step Guide
+                                </h3>
+                                <ul class="space-y-4">
+                                    ${tutorial.steps.map((step, index) => `
+                                        <li class="flex items-start">
+                                            <span class="flex-shrink-0 w-6 h-6 rounded-full border border-slate-700 text-slate-500 flex items-center justify-center text-xs mt-0.5 mr-4">${index + 1}</span>
+                                            <span class="text-slate-300 leading-relaxed">${step}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </section>
+
+                            ${tutorial.troubleshoot ? `
+                                <section id="troubleshoot" class="bg-amber-500/5 border border-amber-500/20 rounded-2xl p-6 scroll-mt-24">
+                                    <h3 class="text-lg font-bold text-amber-400 mb-3 flex items-center">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                                        Troubleshooting
+                                    </h3>
+                                    <p class="text-slate-400 text-sm leading-relaxed">${tutorial.troubleshoot}</p>
+                                </section>
+                            ` : ''}
+                        </div>
+
+                        ${tutorial.relatedIds ? `
+                            <div class="mt-20 pt-10 border-t border-slate-800">
+                                <h3 class="text-xl font-bold text-white mb-8 flex items-center">
+                                    <svg class="w-6 h-6 mr-3 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    What's Next?
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    ${tutorial.relatedIds.map(id => {
+                                        const related = findTutorial(id);
+                                        if (!related) return '';
+                                        return `
+                                            <div data-id="${related.id}" class="group p-4 bg-slate-800/30 border border-slate-700 rounded-xl hover:border-emerald-500/50 cursor-pointer transition-all flex items-center">
+                                                <div class="w-12 h-8 bg-slate-900 rounded overflow-hidden mr-4 flex-shrink-0">
+                                                    <img src="https://img.youtube.com/vi/${related.videos.desktop}/mqdefault.jpg" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity">
+                                                </div>
+                                                <div class="flex-grow">
+                                                    <h4 class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors line-clamp-1">${related.title}</h4>
+                                                    <p class="text-xs text-slate-500 line-clamp-1">Tutorial Guide</p>
+                                                </div>
+                                                <svg class="w-5 h-5 text-slate-600 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                                            </div>
+                                        `;
+                                    }).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('back-to-tutorials').addEventListener('click', () => renderList());
+
+        // Add listeners for "What's Next" cards
+        hubRoot.querySelectorAll('.mt-20 [data-id]').forEach(card => {
+            card.addEventListener('click', () => {
+                const related = findTutorial(card.dataset.id);
+                if (related) {
+                    renderDetail(related);
+                    updateURL(related.id);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Platform switcher logic
+        const platformButtons = hubRoot.querySelectorAll('[data-platform]');
+        const iframe = document.getElementById('tutorial-iframe');
+
+        platformButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const platform = btn.dataset.platform;
+                if (platform === currentPlatform) return;
+
+                currentPlatform = platform;
+                
+                // Update iframe
+                iframe.src = `https://www.youtube.com/embed/${tutorial.videos[currentPlatform]}?rel=0&modestbranding=1`;
+
+                // Update UI styles
+                platformButtons.forEach(b => {
+                    if (b.dataset.platform === currentPlatform) {
+                        b.classList.remove('text-slate-500', 'hover:text-slate-300');
+                        b.classList.add('bg-slate-800', 'text-white');
+                    } else {
+                        b.classList.remove('bg-slate-800', 'text-white');
+                        b.classList.add('text-slate-500', 'hover:text-slate-300');
+                    }
+                });
+            });
+        });
+
+        if (targetSection) {
+            setTimeout(() => {
+                const element = document.getElementById(targetSection);
+                if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+    };
+
+    // Initial Route Handling
+    const init = async () => {
+        const success = await fetchTutorials();
+        if (!success) return;
+
+        const params = getParams();
+        const initialId = params.get('id');
+        const initialSection = getHash();
+
+        if (initialId) {
+            const tutorial = findTutorial(initialId);
+            if (tutorial) {
+                renderDetail(tutorial, initialSection);
+            } else {
+                renderList(true);
+            }
+        } else {
+            renderList(true);
+        }
+    };
+
+    init();
+
+    // Handle Back/Forward buttons
+    window.addEventListener('popstate', (e) => {
+        const params = getParams();
+        const id = params.get('id');
+        if (id) {
+            const tutorial = findTutorial(id);
+            if (tutorial) renderDetail(tutorial, getHash());
+        } else {
+            renderList(true);
+        }
+    });
+}
+
 export function renderNav() {
     const navRoot = document.getElementById('nav-root');
     if (!navRoot) return;
@@ -21,25 +327,25 @@ export function renderNav() {
     };
 
     navRoot.innerHTML = `
-        <nav class="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
+        <nav class="border-b border-slate-800 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50" aria-label="Main navigation">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16 items-center">
                     <div class="flex items-center">
-                        <a href="/" class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+                        <a href="/" class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400" aria-label="EfficientTutor home">
                             EfficientTutor
                         </a>
                     </div>
                     <div class="hidden md:block">
-                        <div class="ml-10 flex items-baseline space-x-8">
-                            <a href="/" class="${isLinkActive('/') ? 'text-emerald-400 border-b-2 border-emerald-400' : 'text-slate-300 hover:text-white'} px-1 py-2 text-sm font-medium transition-colors">Home</a>
-                            <a href="/tutorials.html" class="${isLinkActive('tutorials.html') ? 'text-emerald-400 border-b-2 border-emerald-400' : 'text-slate-300 hover:text-white'} px-1 py-2 text-sm font-medium transition-colors">Tutorials</a>
-                            <a href="/contact.html" class="${isLinkActive('contact.html') ? 'text-emerald-400 border-b-2 border-emerald-400' : 'text-slate-300 hover:text-white'} px-1 py-2 text-sm font-medium transition-colors">Contact</a>
-                            <a href="/privacy.html" class="${isLinkActive('privacy.html') ? 'text-emerald-400 border-b-2 border-emerald-400' : 'text-slate-300 hover:text-white'} px-1 py-2 text-sm font-medium transition-colors">Privacy</a>
-                            <a href="/terms.html" class="${isLinkActive('terms.html') ? 'text-emerald-400 border-b-2 border-emerald-400' : 'text-slate-300 hover:text-white'} px-1 py-2 text-sm font-medium transition-colors">Terms</a>
+                        <div class="ml-10 flex items-baseline space-x-8" role="menubar">
+                            <a href="/" class="${isLinkActive('/') ? 'text-emerald-400 border-b-2 border-emerald-400' : 'text-slate-300 hover:text-white'} px-1 py-2 text-sm font-medium transition-colors" ${isLinkActive('/') ? 'aria-current="page"' : ''} role="menuitem">Home</a>
+                            <a href="/tutorials.html" class="${isLinkActive('tutorials.html') ? 'text-emerald-400 border-b-2 border-emerald-400' : 'text-slate-300 hover:text-white'} px-1 py-2 text-sm font-medium transition-colors" ${isLinkActive('tutorials.html') ? 'aria-current="page"' : ''} role="menuitem">Tutorials</a>
+                            <a href="/contact.html" class="${isLinkActive('contact.html') ? 'text-emerald-400 border-b-2 border-emerald-400' : 'text-slate-300 hover:text-white'} px-1 py-2 text-sm font-medium transition-colors" ${isLinkActive('contact.html') ? 'aria-current="page"' : ''} role="menuitem">Contact</a>
+                            <a href="/privacy.html" class="${isLinkActive('privacy.html') ? 'text-emerald-400 border-b-2 border-emerald-400' : 'text-slate-300 hover:text-white'} px-1 py-2 text-sm font-medium transition-colors" ${isLinkActive('privacy.html') ? 'aria-current="page"' : ''} role="menuitem">Privacy</a>
+                            <a href="/terms.html" class="${isLinkActive('terms.html') ? 'text-emerald-400 border-b-2 border-emerald-400' : 'text-slate-300 hover:text-white'} px-1 py-2 text-sm font-medium transition-colors" ${isLinkActive('terms.html') ? 'aria-current="page"' : ''} role="menuitem">Terms</a>
                         </div>
                     </div>
                     <div class="md:hidden">
-                        <button id="mobile-menu-button" class="text-slate-400 hover:text-white p-2">
+                        <button id="mobile-menu-button" class="text-slate-400 hover:text-white p-2" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open main menu">
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                             </svg>
@@ -48,13 +354,13 @@ export function renderNav() {
                 </div>
             </div>
             <!-- Mobile menu, show/hide based on menu state. -->
-            <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-900">
+            <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-900" role="menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="/" class="block px-3 py-2 rounded-md text-base font-medium ${isLinkActive('/') ? 'bg-slate-800 text-emerald-400' : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">Home</a>
-                    <a href="/tutorials.html" class="block px-3 py-2 rounded-md text-base font-medium ${isLinkActive('tutorials.html') ? 'bg-slate-800 text-emerald-400' : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">Tutorials</a>
-                    <a href="/contact.html" class="block px-3 py-2 rounded-md text-base font-medium ${isLinkActive('contact.html') ? 'bg-slate-800 text-emerald-400' : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">Contact</a>
-                    <a href="/privacy.html" class="block px-3 py-2 rounded-md text-base font-medium ${isLinkActive('privacy.html') ? 'bg-slate-800 text-emerald-400' : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">Privacy</a>
-                    <a href="/terms.html" class="block px-3 py-2 rounded-md text-base font-medium ${isLinkActive('terms.html') ? 'bg-slate-800 text-emerald-400' : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">Terms</a>
+                    <a href="/" class="block px-3 py-2 rounded-md text-base font-medium ${isLinkActive('/') ? 'bg-slate-800 text-emerald-400' : 'text-slate-300 hover:bg-slate-800 hover:text-white'}" ${isLinkActive('/') ? 'aria-current="page"' : ''} role="menuitem">Home</a>
+                    <a href="/tutorials.html" class="block px-3 py-2 rounded-md text-base font-medium ${isLinkActive('tutorials.html') ? 'bg-slate-800 text-emerald-400' : 'text-slate-300 hover:bg-slate-800 hover:text-white'}" ${isLinkActive('tutorials.html') ? 'aria-current="page"' : ''} role="menuitem">Tutorials</a>
+                    <a href="/contact.html" class="block px-3 py-2 rounded-md text-base font-medium ${isLinkActive('contact.html') ? 'bg-slate-800 text-emerald-400' : 'text-slate-300 hover:bg-slate-800 hover:text-white'}" ${isLinkActive('contact.html') ? 'aria-current="page"' : ''} role="menuitem">Contact</a>
+                    <a href="/privacy.html" class="block px-3 py-2 rounded-md text-base font-medium ${isLinkActive('privacy.html') ? 'bg-slate-800 text-emerald-400' : 'text-slate-300 hover:bg-slate-800 hover:text-white'}" ${isLinkActive('privacy.html') ? 'aria-current="page"' : ''} role="menuitem">Privacy</a>
+                    <a href="/terms.html" class="block px-3 py-2 rounded-md text-base font-medium ${isLinkActive('terms.html') ? 'bg-slate-800 text-emerald-400' : 'text-slate-300 hover:bg-slate-800 hover:text-white'}" ${isLinkActive('terms.html') ? 'aria-current="page"' : ''} role="menuitem">Terms</a>
                 </div>
             </div>
         </nav>
@@ -65,7 +371,8 @@ export function renderNav() {
     const mobileMenu = document.getElementById('mobile-menu');
     if (menuButton && mobileMenu) {
         menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const isExpanded = mobileMenu.classList.toggle('hidden');
+            menuButton.setAttribute('aria-expanded', !isExpanded);
         });
     }
 }

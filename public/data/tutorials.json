@@ -1,0 +1,215 @@
+{
+  "tutorialTopics": [
+    {
+      "id": "onboarding",
+      "title": "Onboarding & Sign Up",
+      "description": "Get started with EfficientTutor by setting up your account correctly.",
+      "icon": "<svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z\"></path></svg>",
+      "tutorials": [
+        {
+          "id": "teacher-signup",
+          "title": "Teacher Sign Up",
+          "description": "Step-by-step guide for educators to create their professional profile.",
+          "videos": {
+            "desktop": "dQw4w9WgXcQ",
+            "mobile": "dQw4w9WgXcQ"
+          },
+          "steps": [
+            "Visit the signup page and select \"I am a Teacher\".",
+            "Fill in your professional details and subjects taught.",
+            "Verify your email address via the link sent to you.",
+            "Complete your profile by adding your availability."
+          ]
+        },
+        {
+          "id": "parent-signup",
+          "title": "Parent Sign Up",
+          "description": "How parents can create accounts to monitor their children's progress.",
+          "videos": {
+            "desktop": "dQw4w9WgXcQ",
+            "mobile": "dQw4w9WgXcQ"
+          },
+          "steps": [
+            "Select \"I am a Parent\" on the registration screen.",
+            "Enter your details and set a secure password.",
+            "Link your account to your child using their unique Student ID.",
+            "Configure notification preferences for lesson updates."
+          ]
+        },
+        {
+          "id": "creating-student",
+          "title": "Creating a Student Profile",
+          "description": "Setting up individual student records for personalized tracking.",
+          "videos": {
+            "desktop": "dQw4w9WgXcQ",
+            "mobile": "dQw4w9WgXcQ"
+          },
+          "steps": [
+            "From the Teacher Dashboard, go to \"Manage Students\".",
+            "Click \"Create New Student Profile\".",
+            "Input the student's basic information and learning goals.",
+            "Save the profile to generate a unique ID for parent linking."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enrollment",
+      "title": "Enrollment Management",
+      "description": "Master the tools for managing student placements and group dynamics.",
+      "icon": "<svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z\"></path></svg>",
+      "tutorials": [
+        {
+          "id": "creating-enrollments",
+          "title": "Creating Enrollments",
+          "description": "Learn how to enroll students into specific courses or time slots.",
+          "videos": {
+            "desktop": "dQw4w9WgXcQ",
+            "mobile": "dQw4w9WgXcQ"
+          },
+          "steps": [
+            "Navigate to the \"Enrollment\" tab.",
+            "Select the student and the target course.",
+            "Choose the start date and recurring schedule.",
+            "Click \"Confirm Enrollment\" to finalize the booking."
+          ]
+        },
+        {
+          "id": "editing-enrollments",
+          "title": "Editing Enrollments",
+          "description": "Modify existing student schedules and course details.",
+          "videos": {
+            "desktop": "dQw4w9WgXcQ",
+            "mobile": "dQw4w9WgXcQ"
+          },
+          "steps": [
+            "Find the active enrollment in the student's profile.",
+            "Click \"Edit Schedule\" to change dates or times.",
+            "Review any pricing adjustments if course hours changed.",
+            "Save changes to notify the parent automatically."
+          ]
+        },
+        {
+          "id": "group-management",
+          "title": "Group Management",
+          "description": "Add or remove students from study groups and classes.",
+          "videos": {
+            "desktop": "dQw4w9WgXcQ",
+            "mobile": "dQw4w9WgXcQ"
+          },
+          "steps": [
+            "Go to \"Groups\" in the main navigation.",
+            "Select a group to see current members.",
+            "Use the \"Add Member\" button to search and include new students.",
+            "Use the \"Remove\" icon next to a student name to unenroll them from the group."
+          ],
+          "troubleshoot": "Students can only be removed from a group if they have no pending invoices for that specific class."
+        }
+      ]
+    },
+    {
+      "id": "zoom-integration",
+      "title": "Zoom App Integration",
+      "description": "Automate your virtual classrooms by linking Zoom directly to your timetable.",
+      "icon": "<svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z\"></path></svg>",
+      "tutorials": [
+        {
+          "id": "zoom-overview",
+          "title": "Getting Started with Zoom",
+          "description": "An introduction to how EfficientTutor automates your virtual classrooms using Zoom.",
+          "videos": {
+            "desktop": "dQw4w9WgXcQ",
+            "mobile": "dQw4w9WgXcQ"
+          },
+          "steps": [
+            "Understand the benefit: Zero manual link sharing with students.",
+            "See how links auto-sync when you move a class in your timetable.",
+            "Learn about the \"One-Button Sync\" for your entire schedule.",
+            "Prepare your Zoom account for the initial connection."
+          ],
+          "relatedIds": [
+            "connect-zoom",
+            "sync-zoom-links"
+          ]
+        },
+        {
+          "id": "connect-zoom",
+          "title": "Connecting Zoom Account",
+          "description": "Link your Zoom account to start generating automated meeting links for all tuitions.",
+          "videos": {
+            "desktop": "dQw4w9WgXcQ",
+            "mobile": "dQw4w9WgXcQ"
+          },
+          "steps": [
+            "Log in to your EfficientTutor dashboard.",
+            "Navigate to Settings > Integrations in the sidebar.",
+            "Find the Zoom App card and click the \"Connect\" button.",
+            "Authorize EfficientTutor to access your Zoom meetings when prompted by the Zoom OAuth screen."
+          ],
+          "relatedIds": [
+            "sync-zoom-links",
+            "disconnect-zoom"
+          ]
+        },
+        {
+          "id": "disconnect-zoom",
+          "title": "Disconnecting Zoom",
+          "description": "Safely remove the EfficientTutor integration and stop automated link generation.",
+          "videos": {
+            "desktop": "dQw4w9WgXcQ",
+            "mobile": "dQw4w9WgXcQ"
+          },
+          "steps": [
+            "Go to Settings > Integrations within EfficientTutor.",
+            "Click the \"Disconnect\" button on the Zoom integration card.",
+            "Log in to your Zoom App Marketplace account.",
+            "Navigate to Manage > Added Apps and click \"Remove\" next to EfficientTutor to fully revoke access."
+          ],
+          "relatedIds": [
+            "connect-zoom",
+            "nuke-zoom-links"
+          ]
+        },
+        {
+          "id": "sync-zoom-links",
+          "title": "Bulk Syncing Meeting Links",
+          "description": "Update or generate Zoom links for your entire timetable with a single click.",
+          "videos": {
+            "desktop": "dQw4w9WgXcQ",
+            "mobile": "dQw4w9WgXcQ"
+          },
+          "steps": [
+            "Navigate to the \"Timetable\" or \"Classes\" view in your dashboard.",
+            "Locate the \"Sync Zoom Links\" button in the top action bar.",
+            "Click the button to trigger a system-wide scan of your upcoming sessions.",
+            "The system will automatically generate new links or update existing ones to match your latest schedule changes."
+          ],
+          "relatedIds": [
+            "connect-zoom",
+            "nuke-zoom-links"
+          ]
+        },
+        {
+          "id": "nuke-zoom-links",
+          "title": "Resetting All Meeting Links",
+          "description": "The \"Nuke\" option: Clear all auto-generated Zoom links to perform a fresh synchronization.",
+          "videos": {
+            "desktop": "dQw4w9WgXcQ",
+            "mobile": "dQw4w9WgXcQ"
+          },
+          "steps": [
+            "Access the \"Advanced Settings\" within the Zoom Integration section.",
+            "Find the red \"Reset All Meeting Links\" (Nuke) option.",
+            "Review the warning prompt carefully.",
+            "Confirm the action to delete all current auto-generated links from your tuitions."
+          ],
+          "troubleshoot": "Caution: This action is irreversible. Use this only if you want to completely re-sync your timetable or if you have changed your primary Zoom account.",
+          "relatedIds": [
+            "sync-zoom-links",
+            "disconnect-zoom"
+          ]
+        }
+      ]
+    }
+  ]
+}
