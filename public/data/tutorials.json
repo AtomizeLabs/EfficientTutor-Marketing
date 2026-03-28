@@ -137,8 +137,8 @@
           "title": "Connecting Zoom Account",
           "description": "Link your Zoom account to start generating automated meeting links for all tuitions.",
           "videos": {
-            "desktop": "dQw4w9WgXcQ",
-            "mobile": "dQw4w9WgXcQ"
+            "desktop": "https://www.youtube.com/shorts/l6YM2AT7IHU",
+            "mobile": "https://www.youtube.com/shorts/tI9OCAWJ8bo"
           },
           "steps": [
             "Log in to your EfficientTutor dashboard.",
@@ -156,8 +156,8 @@
           "title": "Disconnecting Zoom",
           "description": "Safely remove the EfficientTutor integration and stop automated link generation.",
           "videos": {
-            "desktop": "dQw4w9WgXcQ",
-            "mobile": "dQw4w9WgXcQ"
+            "desktop": "https://www.youtube.com/shorts/MTu8izXSRuY",
+            "mobile": "https://www.youtube.com/shorts/jKK3LnKg-Jo"
           },
           "steps": [
             "Go to Settings > Integrations within EfficientTutor.",
@@ -175,8 +175,8 @@
           "title": "Bulk Syncing Meeting Links",
           "description": "Update or generate Zoom links for your entire timetable with a single click.",
           "videos": {
-            "desktop": "dQw4w9WgXcQ",
-            "mobile": "dQw4w9WgXcQ"
+            "desktop": "https://www.youtube.com/shorts/qLnHgEeIGUw",
+            "mobile": "https://www.youtube.com/shorts/w9aa4lThuWg"
           },
           "steps": [
             "Navigate to the \"Timetable\" or \"Classes\" view in your dashboard.",
@@ -194,8 +194,8 @@
           "title": "Resetting All Meeting Links",
           "description": "The \"Nuke\" option: Clear all auto-generated Zoom links to perform a fresh synchronization.",
           "videos": {
-            "desktop": "dQw4w9WgXcQ",
-            "mobile": "dQw4w9WgXcQ"
+            "desktop": "https://www.youtube.com/shorts/pEjeFzruwu0",
+            "mobile": "https://www.youtube.com/shorts/-vtI6EkLYvU"
           },
           "steps": [
             "Access the \"Advanced Settings\" within the Zoom Integration section.",
