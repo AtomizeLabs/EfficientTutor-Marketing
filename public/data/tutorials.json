@@ -142,14 +142,17 @@
           },
           "steps": [
             "Log in to your EfficientTutor dashboard.",
-            "Navigate to Settings > Integrations in the sidebar.",
+            "(if on mobile, click on the `3 dashes` More button). Then, Navigate to Profile Section.",
             "Find the Zoom App card and click the \"Connect\" button.",
-            "Authorize EfficientTutor to access your Zoom meetings when prompted by the Zoom OAuth screen."
+            "If you are not signed-in, prompted to sign-in using you own Zoom account.",
+            "Authorize EfficientTutor to access your Zoom meetings when prompted by the Zoom OAuth screen.",
+            "You will be automatically re-directed back to IOS/android app or website you came from with a success toast!"
           ],
           "relatedIds": [
             "sync-zoom-links",
             "disconnect-zoom"
-          ]
+          ],
+          "troubleshoot": "- If you aren't signed in, please don't take more than 10minutes in signing else try again.\n- Please make sure to tick the box when prompted to authorize 'EfficientTutor' to access your account"
         },
         {
           "id": "disconnect-zoom",
@@ -160,15 +163,15 @@
             "mobile": "jKK3LnKg-Jo"
           },
           "steps": [
-            "Go to Settings > Integrations within EfficientTutor.",
-            "Click the \"Disconnect\" button on the Zoom integration card.",
-            "Log in to your Zoom App Marketplace account.",
-            "Navigate to Manage > Added Apps and click \"Remove\" next to EfficientTutor to fully revoke access."
+            "Log in to your EfficientTutor dashboard.",
+            "(if on mobile, click on the `3 dashes` More button). Then, Navigate to Profile Section.",
+            "Find the Zoom App card and click the \"Disconnect\" button."
           ],
           "relatedIds": [
             "connect-zoom",
             "nuke-zoom-links"
-          ]
+          ],
+          "troubleshoot": "- Please note you won't be able to sync meetings or manage them automatically with one button if you decide to disconnect!"
         },
         {
           "id": "sync-zoom-links",
@@ -179,15 +182,16 @@
             "mobile": "w9aa4lThuWg"
           },
           "steps": [
-            "Navigate to the \"Timetable\" or \"Classes\" view in your dashboard.",
-            "Locate the \"Sync Zoom Links\" button in the top action bar.",
-            "Click the button to trigger a system-wide scan of your upcoming sessions.",
-            "The system will automatically generate new links or update existing ones to match your latest schedule changes."
+            "Log in to your EfficientTutor dashboard.",
+            "(if on mobile, click on the `3 dashes` More button). Then, Navigate to 'Tuitions' Section.",
+            "At the very Top, Click on the 'Sync Meetings' button",
+            "Feel free to use the app anyway you want while the background process finishes, you will get a 'Success' Prompt when everything is set and done!"
           ],
           "relatedIds": [
             "connect-zoom",
             "nuke-zoom-links"
-          ]
+          ],
+          "troubleshoot": "- The Sync Meetings button will NOT work if you haven't executed the 'Connect Zoom' Tutorial step beforehand!\n- Please note that manual zoom meet edits will be over-written by whatever settings in the efficient tutor account. Please treat the efficient tutor timetable/tuition settings as the only source of truth, everything will be automatically synced!"
         },
         {
           "id": "nuke-zoom-links",
@@ -198,10 +202,10 @@
             "mobile": "-vtI6EkLYvU"
           },
           "steps": [
-            "Access the \"Advanced Settings\" within the Zoom Integration section.",
-            "Find the red \"Reset All Meeting Links\" (Nuke) option.",
-            "Review the warning prompt carefully.",
-            "Confirm the action to delete all current auto-generated links from your tuitions."
+            "Log in to your EfficientTutor dashboard.",
+            "(if on mobile, click on the `3 dashes` More button). Then, Navigate to 'Tuitions' Section.",
+            "At the very Top, Click on the 'Nuke All Meetings' button.",
+            "Feel free to use the app anyway you want while the background process finishes, you will get a 'Success' Prompt when everything is set and done!"
           ],
           "troubleshoot": "Caution: This action is irreversible. Use this only if you want to completely re-sync your timetable or if you have changed your primary Zoom account.",
           "relatedIds": [
