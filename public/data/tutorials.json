@@ -19,7 +19,8 @@
             "Fill in your professional details and subjects taught.",
             "Verify your email address via the link sent to you.",
             "Complete your profile by adding your availability."
-          ]
+          ],
+          "troubleshoot": "Sign in"
         },
         {
           "id": "parent-signup",
