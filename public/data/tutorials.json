@@ -11,8 +11,8 @@
           "title": "Teacher Sign Up",
           "description": "Step-by-step guide for educators to create their professional profile.",
           "videos": {
-            "desktop": "Teacher Sign up",
-            "mobile": "dQw4w9WgXcQ"
+            "desktop": "0kTpL3mKpKw?",
+            "mobile": "LoaTzoZx4vc?"
           },
           "steps": [
             "Tap \"Need an account? Sign Up.\"",
@@ -35,7 +35,11 @@
             "Choose your Google account.",
             "Tap \"Continue\" to confirm.",
             "Tap \"Allow\" for notifications."
-          ]
+          ],
+          "videos": {
+            "desktop": "FnHcFnnvr7s?",
+            "mobile": "W6x6fwA8gl0?"
+          }
         },
         {
           "id": "parent-signup",
