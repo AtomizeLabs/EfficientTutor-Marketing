@@ -26,6 +26,18 @@
           "troubleshoot": ""
         },
         {
+          "id": "teacher-signin",
+          "title": "Teacher Sign In",
+          "description": "Step-by-step guide for educators to create their professional profile.",
+          "steps": [
+            "Tap \"Sign in with Google.\"",
+            "Tap \"Continue\" on the sign-in.",
+            "Choose your Google account.",
+            "Tap \"Continue\" to confirm.",
+            "Tap \"Allow\" for notifications."
+          ]
+        },
+        {
           "id": "parent-signup",
           "title": "Parent Sign Up",
           "description": "How parents can create accounts to monitor their children's progress.",
@@ -53,18 +65,6 @@
             "Click \"Create New Student Profile\".",
             "Input the student's basic information and learning goals.",
             "Save the profile to generate a unique ID for parent linking."
-          ]
-        },
-        {
-          "id": "teacher-signin",
-          "title": "Teacher Sign In",
-          "description": "Step-by-step guide for educators to create their professional profile.",
-          "steps": [
-            "Tap \"Sign in with Google.\"",
-            "Tap \"Continue\" on the sign-in.",
-            "Choose your Google account.",
-            "Tap \"Continue\" to confirm.",
-            "Tap \"Allow\" for notifications."
           ]
         }
       ]
