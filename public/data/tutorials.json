@@ -18,10 +18,10 @@
             "Tap \"Need an account? Sign Up.\"",
             "Choose the “Parent Role “.",
             "Tap \"Continue with google”.",
-            "Tap \"Continue\" on the sign-in .",
             "Choose your Google account.",
+            "Tap \"Continue\" on the sign-in .",
             "Tap \"Continue\" to confirm.",
-            "Now you have to Sign In "
+            "Now you have to Sign In."
           ],
           "troubleshoot": ""
         },
@@ -30,7 +30,7 @@
           "title": "Teacher Sign In",
           "description": "Step-by-step guide for educators to create their professional profile.",
           "steps": [
-            "Tap \"Sign in with Google.\"",
+            "Tap \"Sign in with Google\".",
             "Tap \"Continue\" on the sign-in.",
             "Choose your Google account.",
             "Tap \"Continue\" to confirm.",
