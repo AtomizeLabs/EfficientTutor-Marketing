@@ -11,16 +11,18 @@
           "title": "Teacher Sign Up",
           "description": "Step-by-step guide for educators to create their professional profile.",
           "videos": {
-            "desktop": "dQw4w9WgXcQ",
+            "desktop": "Teacher Sign up",
             "mobile": "dQw4w9WgXcQ"
           },
           "steps": [
-            "Visit the signup page and select \"I am a Teacher\".",
-            "Fill in your professional details and subjects taught.",
-            "Verify your email address via the link sent to you.",
-            "Complete your profile by adding your availability."
+            "Tap \"Need an account? Sign Up.\"",
+            "Choose the Parent Role \"Continue with Google.\"",
+            "Tap \"Continue\" on the sign-in prompt.",
+            "Choose your Google account.",
+            "Tap \"Continue\" to confirm.",
+            "Tap \"Allow\" for notifications."
           ],
-          "troubleshoot": "Sign in"
+          "troubleshoot": ""
         },
         {
           "id": "parent-signup",
@@ -51,7 +53,8 @@
             "Input the student's basic information and learning goals.",
             "Save the profile to generate a unique ID for parent linking."
           ]
-        }
+        },
+        {}
       ]
     },
     {
