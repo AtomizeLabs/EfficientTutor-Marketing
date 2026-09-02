@@ -16,11 +16,12 @@
           },
           "steps": [
             "Tap \"Need an account? Sign Up.\"",
-            "Choose the Parent Role \"Continue with Google.\"",
-            "Tap \"Continue\" on the sign-in prompt.",
+            "Choose the “Parent Role “.",
+            "Tap \"Continue with google”.",
+            "Tap \"Continue\" on the sign-in .",
             "Choose your Google account.",
             "Tap \"Continue\" to confirm.",
-            "Tap \"Allow\" for notifications."
+            "Now you have to Sign In "
           ],
           "troubleshoot": ""
         },
@@ -54,7 +55,18 @@
             "Save the profile to generate a unique ID for parent linking."
           ]
         },
-        {}
+        {
+          "id": "teacher-signin",
+          "title": "Teacher Sign In",
+          "description": "Step-by-step guide for educators to create their professional profile.",
+          "steps": [
+            "Tap \"Sign in with Google.\"",
+            "Tap \"Continue\" on the sign-in.",
+            "Choose your Google account.",
+            "Tap \"Continue\" to confirm.",
+            "Tap \"Allow\" for notifications."
+          ]
+        }
       ]
     },
     {
