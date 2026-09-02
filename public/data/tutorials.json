@@ -57,7 +57,7 @@
           ]
         },
         {
-          "id": "creating-student",
+          "id": "creating-student profile",
           "title": "Creating a Student Profile",
           "description": "Setting up individual student records for personalized tracking.",
           "videos": {
@@ -65,10 +65,14 @@
             "mobile": "dQw4w9WgXcQ"
           },
           "steps": [
-            "From the Teacher Dashboard, go to \"Manage Students\".",
-            "Click \"Create New Student Profile\".",
-            "Input the student's basic information and learning goals.",
-            "Save the profile to generate a unique ID for parent linking."
+            "Tap \"More\" in the bottom menu.",
+            "Tap \"Student Info.\"",
+            "Tap \"Add New Student.\"",
+            "Tap \"Create Student.\"",
+            "Enter First Name, Last Name, and Grade.",
+            "Tap \"Save Details.\"",
+            "Select the student from the dropdown to view their profile.",
+            "Tap \"Save Details.\""
           ]
         }
       ]
