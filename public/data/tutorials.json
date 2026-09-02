@@ -7,8 +7,8 @@
       "icon": "<svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z\"></path></svg>",
       "tutorials": [
         {
-          "id": "teacher-signup",
-          "title": "Teacher Sign Up",
+          "id": "Parent -signup",
+          "title": "Parent Sign Up",
           "description": "Step-by-step guide for educators to create their professional profile.",
           "videos": {
             "desktop": "0kTpL3mKpKw?",
@@ -26,8 +26,8 @@
           "troubleshoot": ""
         },
         {
-          "id": "teacher-signin",
-          "title": "Teacher Sign In",
+          "id": "Parent-signin",
+          "title": "Parent Sign In",
           "description": "Step-by-step guide for educators to create their professional profile.",
           "steps": [
             "Tap \"Sign in with Google\".",
@@ -42,9 +42,9 @@
           }
         },
         {
-          "id": "parent-signup",
-          "title": "Parent Sign Up",
-          "description": "How parents can create accounts to monitor their children's progress.",
+          "id": "Teacher-signup",
+          "title": "Teacher Sign Up",
+          "description": "How teachers can create accounts to monitor their children's progress.",
           "videos": {
             "desktop": "dQw4w9WgXcQ",
             "mobile": "dQw4w9WgXcQ"
