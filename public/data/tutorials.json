@@ -1,18 +1,18 @@
 {
   "tutorialTopics": [
     {
-      "id": "onboarding",
-      "title": "Onboarding & Sign Up",
+      "id": "Sign Up",
+      "title": "Sign Up",
       "description": "Get started with EfficientTutor by setting up your account correctly.",
       "icon": "<svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z\"></path></svg>",
       "tutorials": [
         {
-          "id": "Parent -signup",
-          "title": "Parent Sign Up",
-          "description": "Step-by-step guide for educators to create their professional profile.",
+          "id": "Parent Sign Up with Google",
+          "title": "Parent Sign Up with Google",
+          "description": "Step-by-step guide for Parents to create their profile.",
           "videos": {
-            "desktop": "0kTpL3mKpKw?",
-            "mobile": "LoaTzoZx4vc?"
+            "desktop": "qzDaT50INts",
+            "mobile": "LoaTzoZx4vc"
           },
           "steps": [
             "Tap \"Need an account? Sign Up.\"",
@@ -26,25 +26,28 @@
           "troubleshoot": ""
         },
         {
-          "id": "Parent-signin",
-          "title": "Parent Sign In",
-          "description": "Step-by-step guide for educators to create their professional profile.",
-          "steps": [
-            "Tap \"Sign in with Google\".",
-            "Tap \"Continue\" on the sign-in.",
-            "Choose your Google account.",
-            "Tap \"Continue\" to confirm.",
-            "Tap \"Allow\" for notifications."
-          ],
+          "id": "Parent Sign Up with Apple",
+          "title": "Parent Sign Up with Apple",
+          "steps": [],
           "videos": {
-            "desktop": "FnHcFnnvr7s?",
-            "mobile": "W6x6fwA8gl0?"
-          }
+            "mobile": "cZXmnoKRP6U",
+            "desktop": "qzDaT50INts"
+          },
+          "description": "Step-by-step guide for Parents to create their profile."
         },
         {
-          "id": "Teacher-signup",
-          "title": "Teacher Sign Up",
-          "description": "How teachers can create accounts to monitor their children's progress.",
+          "id": "Parent Sign Up with Password",
+          "title": "Parent Sign Up with Password",
+          "videos": {
+            "mobile": "Ndo9Ks6_Lf0",
+            "desktop": "RyGgew0xODo"
+          },
+          "description": "Step-by-step guide for Parents to create their profile."
+        },
+        {
+          "id": "Teacher Sign Up with Google",
+          "title": "Teacher Sign Up with Google",
+          "description": "Step-by-step guide for Teachers to create their profile.",
           "videos": {
             "desktop": "dQw4w9WgXcQ",
             "mobile": "dQw4w9WgXcQ"
@@ -57,17 +60,97 @@
           ]
         },
         {
-          "id": "creating-student profile",
-          "title": "Creating a Student Profile",
-          "description": "Create student profile info to get started.",
+          "id": "Teacher Sign Up with Apple",
+          "title": "Teacher Sign Up with Apple",
+          "description": "Step-by-step guide for Teachers to create their profile.",
           "videos": {
-            "desktop": "dQw4w9WgXcQ",
-            "mobile": "dQw4w9WgXcQ"
+            "desktop": "Lslsl",
+            "mobile": "Kkkkk"
+          }
+        },
+        {
+          "id": "Teacher Sign Up with Password",
+          "title": "Teacher Sign Up with Password",
+          "description": "Step-by-step guide for Teachers to create their profile.",
+          "videos": {
+            "desktop": "Kkkk",
+            "mobile": "Kkkk"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Sign In",
+      "title": "Sign In",
+      "description": "Master the tools for managing student placements and group dynamics.",
+      "icon": "<svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z\"></path></svg>",
+      "tutorials": [
+        {
+          "id": "Parent Sign In with google ",
+          "title": "Parent Sign In with google ",
+          "description": "",
+          "videos": {
+            "desktop": "FnHcFnnvr7s",
+            "mobile": "W6x6fwA8gl0"
           },
+          "steps": [
+            "Navigate to the \"Enrollment\" tab.",
+            "Click \"Confirm Enrollment\" to finalize the booking."
+          ]
+        },
+        {
+          "id": "Parent Sign In with Apple ",
+          "title": "Parent Sign In with Apple ",
+          "description": "Modify existing student schedules and course details.",
+          "videos": {
+            "desktop": "XoTLgD2j3-M",
+            "mobile": "BoJp3MTyaUU"
+          },
+          "steps": [
+            "Review any pricing adjustments if course hours changed.",
+            "Save changes to notify the parent automatically."
+          ]
+        },
+        {
+          "id": "Parent Sign In with Password ",
+          "title": "Parent Sign In with Password ",
+          "description": "Add or remove students from study groups and classes.",
+          "videos": {
+            "desktop": "VWKtL7zpf88",
+            "mobile": "nn6L9x_nvJ8"
+          },
+          "steps": [
+            "Go to \"Groups\" in the main navigation.",
+            "Select a group to see current members."
+          ],
+          "troubleshoot": "Students can only be removed from a group if they have no pending invoices for that specific class."
+        },
+        {
+          "id": "Teacher Sign In with Google",
+          "title": "Teacher Sign In with Google"
+        },
+        {
+          "id": "Teacher Sign In with Apple",
+          "title": "Teacher Sign In with Apple"
+        },
+        {
+          "id": "Teacher Sign In with Password",
+          "title": "Teacher Sign In with Password"
+        }
+      ]
+    },
+    {
+      "id": "Student Enrollment ",
+      "title": "Student Enrollment ",
+      "tutorials": [
+        {
+          "id": "Create Student Enrollment ",
+          "title": "Create Student Enrollment ",
           "steps": [
             "Tap \"More\" in the bottom menu.",
             "Tap \"Student Info.\"",
             "Tap \"Add New Student.\"",
+            "Tap \"Create Student.\"",
             "Tap \"Create Student.\"",
             "Enter First Name, Last Name, and Grade.",
             "Tap \"Save Details.\"",
@@ -76,70 +159,19 @@
             "Select a teacher. Choose a teacher from the available options.",
             " Tap “Add Subject” to confirm the enrollment.",
             "Identifying Unavailable Times : Open the Availability screen. ",
-            "Tap on School and adjust the Start and End Time.",
+            "Tap on Set All School Times and adjust the Start and End Time.",
             "Tap “Save Changes”.",
+            "Tap on Set All Sleep Times and adjust the Start and End Time.",
+            "Tap “Save Changes”.",
+            "Red circles",
             "Tap on the empty time space and Select the Sport Type. Set the Start and End Time.",
             "Tap “Add”.",
-            "Tap on Sleep and adjust the start and end time.",
-            "Tap “Save Changes”.",
-            "Tap Create Student.",
-            "Select the student from the dropdown to view their profile.",
-            "Tap “Save Details”."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "enrollment",
-      "title": "Enrollment Management",
-      "description": "Master the tools for managing student placements and group dynamics.",
-      "icon": "<svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z\"></path></svg>",
-      "tutorials": [
-        {
-          "id": "creating-enrollments",
-          "title": "Creating Enrollments",
-          "description": "Learn how to enroll students into specific courses or time slots.",
-          "videos": {
-            "desktop": "dQw4w9WgXcQ",
-            "mobile": "dQw4w9WgXcQ"
-          },
-          "steps": [
-            "Navigate to the \"Enrollment\" tab.",
-            "Select the student and the target course.",
-            "Choose the start date and recurring schedule.",
-            "Click \"Confirm Enrollment\" to finalize the booking."
-          ]
-        },
-        {
-          "id": "editing-enrollments",
-          "title": "Editing Enrollments",
-          "description": "Modify existing student schedules and course details.",
-          "videos": {
-            "desktop": "dQw4w9WgXcQ",
-            "mobile": "dQw4w9WgXcQ"
-          },
-          "steps": [
-            "Find the active enrollment in the student's profile.",
-            "Click \"Edit Schedule\" to change dates or times.",
-            "Review any pricing adjustments if course hours changed.",
-            "Save changes to notify the parent automatically."
-          ]
-        },
-        {
-          "id": "group-management",
-          "title": "Group Management",
-          "description": "Add or remove students from study groups and classes.",
-          "videos": {
-            "desktop": "dQw4w9WgXcQ",
-            "mobile": "dQw4w9WgXcQ"
-          },
-          "steps": [
-            "Go to \"Groups\" in the main navigation.",
-            "Select a group to see current members.",
-            "Use the \"Add Member\" button to search and include new students.",
-            "Use the \"Remove\" icon next to a student name to unenroll them from the group."
+            "Tap Create Student."
           ],
-          "troubleshoot": "Students can only be removed from a group if they have no pending invoices for that specific class."
+          "videos": {
+            "desktop": "Eqf8cb4vdzQ",
+            "mobile": "XVWHlCGu8g4"
+          }
         }
       ]
     },
