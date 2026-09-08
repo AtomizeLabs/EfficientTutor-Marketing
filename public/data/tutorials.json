@@ -63,8 +63,8 @@
           "title": "Teacher Sign Up with Google",
           "description": "Step-by-step guide for Teachers to create their profile.",
           "videos": {
-            "desktop": "dQw4w9WgXcQ",
-            "mobile": "dQw4w9WgXcQ"
+            "desktop": "QhcUFh1jor8",
+            "mobile": "uo58wbvxjxE"
           },
           "steps": [
             "Tap \"Need an account? Sign Up.\"",
@@ -92,8 +92,8 @@
           "title": "Teacher Sign Up with Apple",
           "description": "Step-by-step guide for Teachers to create their profile.",
           "videos": {
-            "desktop": "Lslsl",
-            "mobile": "Kkkkk"
+            "desktop": "MRK3Wyj26vs",
+            "mobile": "2sPLdEkHJFs"
           },
           "steps": [
             "Tap \"Need an account? Sign Up.\"",
@@ -121,8 +121,8 @@
           "title": "Teacher Sign Up with Password",
           "description": "Step-by-step guide for Teachers to create their profile.",
           "videos": {
-            "desktop": "Kkkk",
-            "mobile": "Kkkk"
+            "desktop": "Fe82gw-d2FM",
+            "mobile": "nNDjWGCNVlM"
           },
           "steps": [
             "Tap \"Need an account? Sign Up.\"",
@@ -146,60 +146,91 @@
     {
       "id": "Sign In",
       "title": "Sign In",
-      "description": "Master the tools for managing student placements and group dynamics.",
+      "description": "Get started with EfficientTutor by setting up your account correctly.",
       "icon": "<svg class=\"w-6 h-6\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z\"></path></svg>",
       "tutorials": [
         {
           "id": "Parent Sign In with google ",
           "title": "Parent Sign In with google ",
-          "description": "",
+          "description": "Step-by-step guide for Parents to create their profile.",
           "videos": {
             "desktop": "FnHcFnnvr7s",
             "mobile": "W6x6fwA8gl0"
           },
           "steps": [
-            "Navigate to the \"Enrollment\" tab.",
-            "Click \"Confirm Enrollment\" to finalize the booking."
+            "Tap “Sign in with google “.",
+            "Choose your Google account.",
+            "Tap \"Continue\" on the sign-in ."
           ]
         },
         {
           "id": "Parent Sign In with Apple ",
           "title": "Parent Sign In with Apple ",
-          "description": "Modify existing student schedules and course details.",
+          "description": "Step-by-step guide for Parents to create their profile.",
           "videos": {
             "desktop": "XoTLgD2j3-M",
             "mobile": "BoJp3MTyaUU"
           },
           "steps": [
-            "Review any pricing adjustments if course hours changed.",
-            "Save changes to notify the parent automatically."
+            "Tap “Sign in with apple “.",
+            "Use Face ID or enter your password to sign in.",
+            "Tap \"Continue\" on the sign-in ."
           ]
         },
         {
           "id": "Parent Sign In with Password ",
           "title": "Parent Sign In with Password ",
-          "description": "Add or remove students from study groups and classes.",
+          "description": "Step-by-step guide for Parents to create their profile.",
           "videos": {
             "desktop": "VWKtL7zpf88",
             "mobile": "nn6L9x_nvJ8"
           },
           "steps": [
-            "Go to \"Groups\" in the main navigation.",
-            "Select a group to see current members."
+            "Enter your Email and Password that you have signed up with.",
+            "Tap “log in”."
           ],
-          "troubleshoot": "Students can only be removed from a group if they have no pending invoices for that specific class."
+          "troubleshoot": ""
         },
         {
           "id": "Teacher Sign In with Google",
-          "title": "Teacher Sign In with Google"
+          "title": "Teacher Sign In with Google",
+          "videos": {
+            "desktop": "bMjuKyHfAeg",
+            "mobile": "wT-vtukcsD4"
+          },
+          "steps": [
+            "Tap “Sign in with google “.",
+            "Choose your Google account.",
+            "Tap \"Continue\" on the sign-in ."
+          ],
+          "description": "Step-by-step guide for Teachers to create their profile."
         },
         {
           "id": "Teacher Sign In with Apple",
-          "title": "Teacher Sign In with Apple"
+          "title": "Teacher Sign In with Apple",
+          "videos": {
+            "desktop": "nMoxtkTSt9g",
+            "mobile": "2sPQKkyZB9w"
+          },
+          "description": "Step-by-step guide for Teachers to create their profile.",
+          "steps": [
+            "Tap “Sign in with apple “.",
+            "Use Face ID or enter your password to sign in.",
+            "Tap ”continue”to sign in . "
+          ]
         },
         {
           "id": "Teacher Sign In with Password",
-          "title": "Teacher Sign In with Password"
+          "title": "Teacher Sign In with Password",
+          "videos": {
+            "mobile": "p07mJHhi9y4",
+            "desktop": "H22mewky0GY"
+          },
+          "description": "Step-by-step guide for Teachers to create their profile.",
+          "steps": [
+            "Enter your Email and Password that you have signed up with.",
+            "Tap “log in”."
+          ]
         }
       ]
     },
