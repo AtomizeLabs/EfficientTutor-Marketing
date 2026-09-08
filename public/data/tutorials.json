@@ -19,8 +19,7 @@
             "Choose the “Parent Role “.",
             "Tap \"Continue with google”.",
             "Choose your Google account.",
-            "Tap \"Continue\" on the sign-in .",
-            "Tap \"Continue\" to confirm.",
+            "Tap \"Continue\" on the sign-up .",
             "Now you have to Sign In."
           ],
           "troubleshoot": ""
@@ -28,7 +27,14 @@
         {
           "id": "Parent Sign Up with Apple",
           "title": "Parent Sign Up with Apple",
-          "steps": [],
+          "steps": [
+            "Tap \"Need an account? Sign Up.\"",
+            "Choose the “Parent Role “.",
+            "Enter your First and Last Name. ",
+            "Tap “continue with apple”.",
+            "Tap \"Continue\" on the sign-up .",
+            "Now you have to Sign In."
+          ],
           "videos": {
             "mobile": "cZXmnoKRP6U",
             "desktop": "qzDaT50INts"
@@ -42,7 +48,15 @@
             "mobile": "Ndo9Ks6_Lf0",
             "desktop": "RyGgew0xODo"
           },
-          "description": "Step-by-step guide for Parents to create their profile."
+          "description": "Step-by-step guide for Parents to create their profile.",
+          "relatedIds": [],
+          "steps": [
+            "Tap \"Need an account? Sign Up.\"",
+            "Choose the “Parent Role “.",
+            "Enter your First name ,Last Name, Email and Password",
+            "Tap Sign-Up .",
+            "Now you have to Sign In."
+          ]
         },
         {
           "id": "Teacher Sign Up with Google",
@@ -53,10 +67,24 @@
             "mobile": "dQw4w9WgXcQ"
           },
           "steps": [
-            "Select \"I am a Parent\" on the registration screen.",
-            "Enter your details and set a secure password.",
-            "Link your account to your child using their unique Student ID.",
-            "Configure notification preferences for lesson updates."
+            "Tap \"Need an account? Sign Up.\"",
+            "Choose the “Teacher Role “",
+            "Tap \"Continue with google”.",
+            "Choose your Google account.",
+            "Tap \"Continue\" on the sign-up .",
+            "Tap “next”.",
+            "Select Subject, System, and Grade range, then tap \"Add Specialty.\"",
+            "Tap \"Next\" once done.",
+            "Identifying Unavailable Times : Tap on Set All Work Times and adjust the Start and End Time.",
+            "Tap “Save Changes”.",
+            "Tap on Set All Sleep Times and adjust the Start and End Time.",
+            "Use the arrows next to the day name to check each activity day's schedule.",
+            "Tap “Save Changes”.",
+            "Tap on the empty time space and Select the Sport Type. Set the Start and End Time.",
+            "Tap “Add”.",
+            "Scroll down and tap “Continue with google”.",
+            "Tap \"Continue\" on the sign-up .",
+            "Now you have to Sign In. "
           ]
         },
         {
@@ -66,7 +94,27 @@
           "videos": {
             "desktop": "Lslsl",
             "mobile": "Kkkkk"
-          }
+          },
+          "steps": [
+            "Tap \"Need an account? Sign Up.\"",
+            "Choose the “Teacher Role “.",
+            " Enter your First and Last Name. ",
+            "Tap “continue with apple”.",
+            " Tap \"Continue\" on the sign-up .",
+            "Tap “next”.",
+            "Select Subject, System, and Grade range, then tap \"Add Specialty.\"",
+            "Tap \"Next\" once done.",
+            "Identifying Unavailable Times : Tap on Set All Work Times and adjust the Start and End Time.",
+            "Tap “Save Changes”.",
+            "Tap on Set All Sleep Times and adjust the Start and End Time.",
+            "Tap “Save Changes”.",
+            "Use the arrows next to the day name to check each activity day's schedule.",
+            "Tap on the empty time space and Select the Sport Type. Set the Start and End Time.",
+            "Tap “Add”.",
+            "Scroll down and tap “Continue with apple”.",
+            "Tap \"Continue\" on the sign-up .",
+            "Now you have to Sign In."
+          ]
         },
         {
           "id": "Teacher Sign Up with Password",
@@ -75,7 +123,23 @@
           "videos": {
             "desktop": "Kkkk",
             "mobile": "Kkkk"
-          }
+          },
+          "steps": [
+            "Tap \"Need an account? Sign Up.\"",
+            "Choose the “Teachr Role “.",
+            " Enter your First name, Last name,Email and Password.",
+            "Tap “Sig Up”.",
+            "Select Subject, System, and Grade range, then tap \"Add Specialty.\"",
+            "Tap \"Next\" once done.",
+            "Identifying Unavailable Times : Tap on Set All Work Times and adjust the Start and End Time.",
+            "Tap “Save Changes”.",
+            "Tap on Set All Sleep Times and adjust the Start and End Time.",
+            "Tap “Save Changes”.",
+            "Tap on the empty time space and Select the Sport Type. Set the Start and End Time.",
+            "Tap “Add”.",
+            "Scroll down and tap “Sign Up”",
+            "Now you have to Sign In."
+          ]
         }
       ]
     },
@@ -151,22 +215,20 @@
             "Tap \"Student Info.\"",
             "Tap \"Add New Student.\"",
             "Tap \"Create Student.\"",
-            "Tap \"Create Student.\"",
             "Enter First Name, Last Name, and Grade.",
             "Tap \"Save Details.\"",
             "Choosing Enrollment: Select the subject, education system, and grade, then specify the lessons per week.",
             "Find available teachers. Tap “Find Teachers.”",
             "Select a teacher. Choose a teacher from the available options.",
             " Tap “Add Subject” to confirm the enrollment.",
-            "Identifying Unavailable Times : Open the Availability screen. ",
-            "Tap on Set All School Times and adjust the Start and End Time.",
+            "Identifying Unavailable Times : Tap on Set All School Times and adjust the Start and End Time.",
             "Tap “Save Changes”.",
             "Tap on Set All Sleep Times and adjust the Start and End Time.",
             "Tap “Save Changes”.",
-            "Red circles",
+            "Use the arrows next to the day name to check each activity day's schedule.",
             "Tap on the empty time space and Select the Sport Type. Set the Start and End Time.",
             "Tap “Add”.",
-            "Tap Create Student."
+            "Tap “Create Student”."
           ],
           "videos": {
             "desktop": "Eqf8cb4vdzQ",
